@@ -6,7 +6,7 @@ import {Products} from '../componients/home/Products'
   return (
     <div>
         <Banner />
-      <div className="w-full -mt-36 py-10">
+      <div className="w-full -mt14 xl:-mt-36 py-10">
         <Products />
       </div>
     </div>

@@ -35,19 +35,19 @@ export const HeaderBottom = () => {
                   className='headerHover flex items-center gap-1' >
                 <MenuIcon/>  Меню
               </li>
-              <li className='headerHover' >
+              <li className='headerHover hidden md:inline-flex' >
                   Предложение дня
               </li>
-              <li className='headerHover' >
+              <li className='headerHover hidden md:inline-flex' >
                   Обслуживание Покупателя
               </li>
-              <li className='headerHover' >
+              <li className='headerHover hidden md:inline-flex' >
                   Скидочная Программа
               </li>
-              <li className='headerHover' >
+              <li className='headerHover hidden md:inline-flex' >
                   Регистрация
               </li>
-              <li className='headerHover' >
+              <li className='headerHover hidden md:inline-flex' >
                   Распродажа
               </li>
             </ul>
@@ -63,7 +63,7 @@ export const HeaderBottom = () => {
                               initial={{ x: -500, opacity: 0 }}
                               animate={{ x: 0, opacity: 1 }}
                               transition={{duration:.5}}
-                              className='w-[350px] h-full bg-white border border-black' >
+                              className='w-[80%] md:w-[350px] h-full bg-white border border-black' >
                               <div className='w-full bg-color_light text-white py-2 px-6 flex item-center gap-4'>
                                   <AccountCircleIcon />
                                   <h3 className='font-titleFont font-bold text-lg tracking-wide' >
@@ -95,7 +95,7 @@ export const HeaderBottom = () => {
                                   three='Контакты'
                               />
                               <span onClick={() => setSideBar(false)}
-                              className='cursor-pointer absolute top-0 left-[360px] w-10 h-10 text-black
+                              className='cursor-pointer absolute top-0 left-[82%]  md:left-[360px] w-10 h-10 text-black
                           flex items-center justify-center border bg-gray-200 hover:bg-red-500
                           hover:text-white duration-300' >
                               <CloseIcon />

@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 import { allItems } from '../../constants';
 import { HeaderBottom } from './HeaderBottom';
+import { Link } from 'react-router-dom';
 
 export const Header = () => {
     const [showAll, setShowAll] = useState(false);
@@ -27,13 +28,13 @@ export const Header = () => {
                 </div>
             {/*=============Image End hear================== */}
             {/*=============Delever Start hear============== */}
-              <div className='headerHover'>
+              <div className='headerHover hidden lgl:inline-flex'>
                   <ModeOfTravelIcon />
               <p className='text-sm text-lightText font-light flex flex-col' >Ваш город <span className='text-sm font-semibold -mt-1 text-whiteText' >Краснодар</span> </p>
               </div> 
             {/*=============Delever End hear================ */}
             {/*=============Search Start hear=============== */}
-              <div className='h-10 rounded-md flex flex-grow relative ' >
+              <div className='h-10 rounded-md hidden mdl:flex flex-grow relative ' >
                   <span
                       onClick={()=>setShowAll(!showAll)}
                       className='w-14 h-full bg-gray-200
@@ -78,18 +79,20 @@ export const Header = () => {
               </div>
             {/*=============Search End hear================= */}
             {/*=============Singin Start hear=============== */}
-              <div className='flex flex-col items-start justify-center headerHover' >
-                  <p className='text-xs text-lightText font-light' >Зарегистрироваться</p>
-                  <p className='text-sm font-semibold -mt-1' >
+              <Link to='/signin' >
+               <div className='flex flex-col items-start justify-center headerHover' >
+                  <p className='text-sm mdl:text-xs text-white mdl:text-lightText font-light' >Зарегистрироваться</p>
+                  <p className='text-sm font-semibold -mt-1 text-whiteText hidden mdl:inline-flex' >
                       Войти в аккаунт {" "}
                       <span>
                           <ArrowDropDownIcon />
                       </span>
                   </p>
             </div>
+              </Link>
             {/*=============Singin End hear================= */}
             {/*=============Orders Start hear=============== */}
-              <div className="flex flex-col items-start justify-center headerHover">
+              <div className=" hidden lgl:flex flex-col items-start justify-center headerHover">
                   <p className='text-xs text-lightText font-light' >Купить</p>
                   <p className='text-sm font-semibold -mt-1' >Сейчас</p>
                   </div>
