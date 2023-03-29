@@ -5,11 +5,14 @@ import ApiIcon from '@mui/icons-material/Api';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../redux/storeSlice';
 
 
  
 
 export const Products = () => {
+  const dispatch = useDispatch()
   const data = useLoaderData();
   const productsData = data.data;
 
@@ -58,6 +61,15 @@ export const Products = () => {
               </div>
            </div>
            <button
+             onClick={() => dispatch(addToCart({
+               id: item.id,
+               title: item.title,
+               description: item.description,
+               price: item.price,
+               category: item.category,
+               image: item.image,
+               quantity: 1,
+             }))}
              className='w-full font-titleFont font-medium text-base 
              bg-gradient-to-tr from-yellow-400 to-yellow-200 border
               hover:from-yellow-300 hover:to-yellow-500 hover:botder-yellow-700

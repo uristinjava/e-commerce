@@ -30,7 +30,7 @@ export const FooterMiddle = () => {
         <div className="">
           <img className='w-20 pt-3' src={logo} alt="Logo" />
         </div>
-        <div flex gap-2 >
+        <div className='flex gap-2'   >
           <p className='flex gap-1 items-center justify-center border border-gray-500 hover:border-color_yellow cursor-pointer duration-200 px-2 py-2' >
             English
           </p>

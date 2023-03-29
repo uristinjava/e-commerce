@@ -10,22 +10,23 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { allItems } from '../../constants';
 import { HeaderBottom } from './HeaderBottom';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
     const [showAll, setShowAll] = useState(false);
-   
-
-  return (
+    const products = useSelector((state) => state.storeReducer.products);
+      
+    return (
       <div
           className='w-full sticky top-0 z-50'
       >
           <div className='w-full text-white bg-color_blue py-3 px-4 mx-auto flex items-center gap-4'>
             {/*=============Image Start hear================ */}
-              <div
-                  className='headerHover'
-              >
-                    <img className='w-24 mt-2' src={logo} alt="LOGO" />
-                </div>
+                <Link to='/' >
+                    <div className='headerHover'>
+                        <img className='w-24 mt-2' src={logo} alt="LOGO" />
+                    </div>
+                </Link>
             {/*=============Image End hear================== */}
             {/*=============Delever Start hear============== */}
               <div className='headerHover hidden lgl:inline-flex'>
@@ -98,19 +99,19 @@ export const Header = () => {
                   </div>
             {/*=============Orders End hear================= */}
             {/*=============Carts Start hear================ */}
-              <div className="flex items-start justify-center headerHover relative">
-                  <ShoppingCartIcon />
-                  <p className='text-xs font-semibold mt-3 text-whiteText' >
-                      Корзина
-                      <span
-                          className='absolute text-xs -top-1 left-6 font-semibold 
-                          p-1 h-4 bg-[#f3a847] text-color_blue rounded-full
-                          flex justify-center items-center ' 
-                      >
-                          0
-                      </span>
-                  </p>
-              </div>
+                <Link to='/cart'>
+                    <div className="flex items-start justify-center headerHover relative">
+                        <ShoppingCartIcon />
+                        <p className='text-xs font-semibold mt-3 text-whiteText' >
+                            Корзина {' '}
+                            <span
+                                className='absolute text-xs -top-1 left-6 font-semibold 
+                                p-1 h-4 bg-[#f3a847] text-color_blue rounded-full
+                                flex justify-center items-center ' 
+                            >{products.length > 0 ? products.length : 0}</span>
+                        </p>
+                    </div>
+                </Link>
             {/*=============Carts End hear================== */}
           </div>
 
