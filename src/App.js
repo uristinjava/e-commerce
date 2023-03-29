@@ -1,5 +1,5 @@
 import React from "react";
-import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, createRoutesFromElements, Outlet, Route, RouterProvider, ScrollRestoration  } from "react-router-dom";
 import { productsData } from "./api/api";
 
 
@@ -13,6 +13,7 @@ const Layout =()=>{
   return (
     <div>
       <Header />
+      <ScrollRestoration/>
       <Outlet />
       <Footer />
     </div>

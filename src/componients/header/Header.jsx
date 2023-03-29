@@ -14,7 +14,8 @@ import { useSelector } from 'react-redux';
 
 export const Header = () => {
     const [showAll, setShowAll] = useState(false);
-    const products = useSelector((state) => state.storeReducer.products);
+    const products = useSelector((state) => state.e_commerce.products);
+    
       
     return (
       <div
@@ -108,7 +109,9 @@ export const Header = () => {
                                 className='absolute text-xs -top-1 left-6 font-semibold 
                                 p-1 h-4 bg-[#f3a847] text-color_blue rounded-full
                                 flex justify-center items-center ' 
-                            >{products.length > 0 ? products.length : 0}</span>
+                            >
+                                {products.length > 0 ? products.length : 0}
+                            </span>
                         </p>
                     </div>
                 </Link>

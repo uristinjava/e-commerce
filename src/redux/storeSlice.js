@@ -19,10 +19,37 @@ export const storeSlice = createSlice({
             )
             
                      
+        },
+        incrementQuantity: (state, action) => {
+            const item = state.products.find(
+                (item) => item.id === action.payload);
+            
+            
+            item.quantity++
+        },
+
+        decrimentsQuantity: (state, action) => {
+            const item = state.products.find(
+                (item) => item.id === action.payload);
+            if (item.quantity === 1) {
+               item.quantity = 1
+            } else {
+                item.quantity--
+           }
+            
+            
+        },
+
+        deletItem: (state, action) => {
+            state.products = state.products.filter((item)=>item.id !==action.payload)
+        },
+
+        resetCart:(state) => {
+            state.products=[]
         }
     }
 })
 
-export const { addToCart } = storeSlice.actions
+export const { addToCart, deletItem, resetCart, incrementQuantity, decrimentsQuantity } = storeSlice.actions
 
 export default storeSlice.reducer
